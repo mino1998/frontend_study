@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+            p{
+                color: blue;
+            }
+            p:hover{
+                color:magenta;
+            }
+            .hi{
+                color:orangered;
+            }
+            .hi:active{
+                color:indigo;
+            }
+            #hotpink{
+                color: hotpink;
+                /*해당 id는 hotpink색을 주고싶은 p태그 한개 이며, 이건 주석입니다. */
+            }
+            /* 의사 클래스를 만들어 보자. */
+            input:focus{
+                background-color: lightsalmon;
+            }
+            input:checked{
+                margin-left:25px;
+            }
+    </style>
+</head>
+<body>
+    <p>안녕</p>
+    <p>하세요</p>
+    <!-- div와 span이 동일한 태그가 아니기에 style에 태그로 쓴다면 두번 쓰는데, 
+    class를 쓰면 둘을 한번에 같이 변경 가능합니다.-->
+    <div class="hi">반가워요</div>
+    <span class="hi">고마워요</span>
+    <p id="hotpink">저는 맨 위와 동일한 p 태그에요, 과연 같은 파란색으로 나올까요?</p>
+    <input type="text"/>
+    <input type="checkbox"/>
+</body>
+</html>

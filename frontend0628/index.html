@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- meta는 문서에 대한 정보입니다.-->
+    <!-- charset을 기억하는것이 아닌 무조건 "Encoding"을 기억하세요 제발 제발-->
+    <!-- 이 글은 니가 어떤 방식으로 써야 해! 라고 알려주는 것이다. 안쓰면 브라우저가 해석하는데 이거 지정안하면 잘못 지정해서 한글 깨질수 있다.-->
+    <meta charset="UTF-8">
+    <!-- 이건 모바일 떄문에 있는 거야. viewport : 보여지는 것을, content는 장치의 width로 할게, initail scale은 이렇게 할거야 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- title은 문서의 제목이며, 탭에 보여지는 제목입니다.-->
+    <title>Document</title>
+    <!-- 웹 브라우저가 해석해서 실행합니다. 컴파일러가 하는 것이 아닙니다.여기서 새로 실행이 아닌 단순 브라우저 새로고침 해주면 됩니다.-->
+</head>
+<body bgcolor="gray">
+    Hello World!<br>
+    태그는 2종류가 있어요, 그리고 태그 안에는 속성이라는 것이 존재합니다.<br>
+    닫는 태그가 없는 태그와 닫는 태그가 있는 태그<br>
+    <h1>내용 - 이 태그는 닫는 태그가 있는 태그입니다.</h1><br>
+    아래의 이미지는 닫는 태그가 없는 태그입니다.<br>
+    <img src="https://velog.velcdn.com/images/mhlee5894/post/8e9079a9-35d1-4438-9ceb-202fe7eeae50/image.jpg" width="250" height="300"/>
+    <!-- 블록 태그 : 자신의 주위에 아무도 못 오는 태그-->
+    <p>블록태그가 줄이 바뀌는지 테스트 합니다.</p>
+    <p>동일한 p 태그 입니다.</p>
+    <!-- 인라인 태그 : 자신의 좌우에 다른 것을 배치할 수 있는 태그-->
+    <span>인라인 태그 실험입니다.</span>
+    <span>인라인 태그는 줄바꿈이 될까요?</span>
+    <!-- 블록과 인라인 설정을 변경하고자 한다면 css를 이용해야 합니다.-->
+    <!-- 이제 stylesheet script 차이점을 보자-->
+    <hr size="10" color="black"/>
+    <h1 class="firstarea">Hello</h1>
+    <p class="firstarea">반갑습니다.</p>
+    <p class="secondarea" id="adam">두 번째 단락입니다.</p> <!-- 클래스로 만들면 단순 태그에 속성값을 바꾸는 것보다 효율이 높다.-->
+    <button id="btn">클릭</button>
+    <script>
+        document.getElementById("btn").addEventListener(
+            "click", function(e){
+                document.getElementById("adam").innerHTML="짠! 글자가 바뀌었어요!"
+            }
+        )
+    </script> <!-- 과연 이 스크립트를 id=adam 인 태그 위에다가 올리면 어떻게 될까? 안될거야 왜냐 스크립트는 순서대로 이기 떄문이야.-->
+     <style>
+        .firstarea{
+            color:magenta;
+            background-color: cyan;
+            font-weight: bold;
+        }
+        .secondarea{
+            color:blueviolet;
+            background-color: lightcoral;
+            font-weight: bold;  
+        }
+    </style> 
+    <!-- 스타일 시트는 다 읽고 나중에 적용된다 하니 어디에 있어도 상관이 없다.근데 밑에다 쓰는게 우리 눈으로 보기에 좀 더 편하다.-->
+    <!-- 스타일, 스크립트는 별도의 파일로 만드는게 좋아요. 근데 파일로 쪼개면 읽는게 어려워, 하지만 유지보수가 편리해-->
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>for the test</title>
+</head>
+<body>
+    <h1>테스트를 위한 자료입니다.</h1>
+    <a href="https://www.google.co.kr" target="_blank" ><img src="../HTML/static/galoo.jpg" alt="구글 연동 이미지" width="250" height="300"></a>
+    <br>해당 이미지를 누르면 구글로 넘어갑니다.
+    <!-- 기본 테이블 만들기-->
+    <p>하단은 간단한 기본 테이블입니다.</p>
+    <table border="1">
+        <tr>
+            <th>이름</th><th>성별</th>    
+        </tr>
+        <tr>
+            <td>이민호</td><td>남자</td>
+        </tr>
+    </table>
+    <form action="" method="get" enctype="multipart/form-data">
+        <!-- name은 서버에서 사용하기 위한 이름
+        id는 클라이언트에서 사용하기 위한 이름-->
+        <label>이름:<input type="text" name="" id=""/></label>
+        <br>
+        <input name="gender" type="radio">남자
+        <input name="gender" type="radio" checked="checked">여자
+        <button>submit</button>
+
+        <div>블록입니다.(div)</div>
+        <span>인라인 확인입니다.</span>
+        <span>span은 인라인일까?</span><br>
+        <iframe src="../HTML/main.html" width="500" height="500"></iframe><span>안녕? 너는 인라인이니?</span>
+    </form>
+</body>
+</html>
