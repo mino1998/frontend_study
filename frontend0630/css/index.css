@@ -1,0 +1,15 @@
+p{
+    color: blueviolet;
+    font-weight: lighter;
+}
+div{
+    color: coral;
+    font-weight: bold;
+    background-image: url("../static/galoo3.jpg");  
+    width: 1000px;
+    height: 800px;
+}
+#prac{
+    color: darkorchid;
+    font-weight: bolder;
+}

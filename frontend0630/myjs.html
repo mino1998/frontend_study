@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Practice</title>
+    <script src="./js/myjs.js"></script> <!-- 외부 js 파일 가져와서 사용하기-->
+</head>
+
+<body>
+    <canvas id="canvas"></canvas>
+    <button onclick="alert('버튼 클릭')">submit</button>
+    <!-- 태그를 쓰고 이벤트의 이름을 쓰고 ""안에 내용을 쓰면 이벤트 발생 시, 내용을 실행함 위에건 인라인임-->
+    <button id="btn">버튼</button>
+    <script>
+        document.getElementById("btn").addEventListener("click",
+            function () {
+                alert("두 번째 버튼을 클릭했어요")
+            }
+        )
+    </script> <!-- 이 스크립트 코드가 head에 쓰였다면 실행이 안될거다. 왜냐면 그 위에는 id="btn"인 애가 없으니까-->
+    <script>
+        //document.write("화면에 출력할거에용")
+        //alert("대화상자에 출력된답니다") //확인해 보면 alert가 먼저 출력되는 것을 확인, 결국 화면 출력이 가장 느린것을 확인할 수 있음
+        console.log("검사하기")
+    </script>
+    <script>
+        var canvas = document.getElementById('canvas');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        var context = canvas.getContext('2d');
+        let name = "이민호" //변경 가능한 변수 생성
+        let age = 26
+        const HOMETOWN = "Seoul" // 데이터를 변경 불가능한 이름 생성
+        //hometown="Busan" 하면 안된다? console.log(hometown) 하려고 해봐라. 콘솔에서 에러떴다고 하나 나온다
+        //개발자들 중에는 변경 불가능한 데이터의 이름 
+        //모두 대문자로 만드는 것을 선호합니다.
+        let school
+        console.log(school)
+        let companys = ["LG", "MS", "SK"] // 배열 : 벡터 데이터
+        companys[1] = "naver" // 인덱싱을 통해 데이터 수정
+        console.log(companys) // 배열 데이터 확인
+        console.log(companys.length) // 배열 길이 확인
+        console.log(companys[10]) // 에러 확인 undefined
+        var imageSources = ['./static/galoo3.jpg', '../frontend0628/static/galoo.jpg', '../frontend0628/static/galoo2.jpg','./static/galoo4.jpg']
+        var currentIndex = 0;
+        function drawImage(image) {
+            context.drawImage(image, 0, 0, 783, 828); //canvas.width = window.innerWidth;
+                                                      //canvas.height = window.innerHeight; 전체하려면 783 828대신
+        }
+
+        function changeImage() {
+            var image = new Image();
+            image.src = imageSources[currentIndex];
+            image.onload = function () {
+                drawImage(image);
+            };
+
+            currentIndex++;
+            if (currentIndex >= imageSources.length) {
+                currentIndex = 0; // 이미지 인덱스 초기화
+            }
+        }
+        setInterval(changeImage, 1000);
+        /*let index=0
+        let colors=['red','blue','green','yellow']
+        setInterval(function(){
+            index=index+1
+            document.write(colors[index%colors.length]+'<br/>')
+        },1000)*/
+    </script>
+</body>
+
+</html>
