@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+        //함수 작성
+        function f1(){
+            document.write("hello")
+        }
+        //권장하는 방법
+        let f2= function(){
+            document.write("<br/>")
+        }
+        let f3= function(){
+            document.write("world!")
+        }
+        //함수 호출하기
+        f1() // 별도의 메모리 공간을 할당받아서 f1의 내용을 수행
+        f2() // f2라는 함수를 호출(call)
+        f3() // let f2= func 로 함수 선언하면 미리 만들고 선언 해야하지만, let을 안쓰고 그냥 function f1() 하면 f1을 호출 먼저해도 되더라*/
+        
+        let noargfunc=function(){
+            for(let i =0 ; i<3; i=i+1){
+                document.write(i+"<br/>");
+            }
+        }
+        // 매개변수가 있다면 다양한 형태로 만들 수 있어요
+        let argfunc=function(cnt){
+            for(let i =0 ; i<cnt; i=i+1){
+                document.write(i+"<br/>");
+            }
+        }
+        //
+        // let integerAddWithInteger = function(a,b){
+        //     // 2개의 정수를 입력받아서 더한 후 결과를 출력하는 함수입니다.
+        //     let r=a+b;
+        //     document.write(a+"+"+b+"=",a+b)
+        // }
+        //document를 검색해 보면
+        // let integerAddWithInteger = function(a,b){
+        //     // 2개의 정수를 입력받아서 더한 후 결과를 출력하는 함수입니다.
+        // }
+        // 이렇게만 있을 것이다. 대신 parameter에서 ... 이 붙으면 더 줘도 된다는 것이다. 
+
+        // 매개변수는 뒤에서부터 생략이 가능합니다.
+        // 생략을 한다면 undefined가 대입됩니다.
+        
+        //integerAddWithInteger(100) // 이러면 a는 100이 되지만, b는 undefined가 됩니다.결과는 제대로 안나오겠네요
+
+        // let integerAddWithInteger = function(a,b){
+        //     // 2개의 정수를 입력받아서 더한 후 결과를 출력하는 함수입니다.
+        //     let r=a+b;
+        //     document.write(a+"+"+b+"=",a+b)
+        //     // return이 생략된 경우 맨 마지막에 return이 있는 것으로 간주합니다.
+        //     // return 이라고 써져있다고 생각해야 합니다.
+        // }
+        integerAddWithInteger(100,200) // 이걸 하면 document.write(~~) 하고 다시 돌아온다는 것이다.
+        // return 하는 데이터가 없는 경우, 함수를 호출하고 더 이상 
+        // 작업을 이어서 수행할 수 는 없습니다.
+        // 결국 한 블럭이 끝났다는 것을 알 수 있습니다. 
+        // integerAddWithInteger(100,200) 여기에 함수에 return이 없으니 300인 값은 그냥 화면 출력되고
+        // 사라지는 것입니다.
+        let integerAddWithInteger = function(a,b){
+            // 2개의 정수를 입력받아서 더한 후 결과를 출력하는 함수입니다.
+            let r=a+b;
+            return r
+        }
+        result = integerAddWithInteger(100,200)
+        document.write(result)
+        // 이렇게 한다면 결과를 return해서 데이터를 가져와서 result에 저장하고 사용할 수 있는 것을 확인할 수 있습니다.
+        // document.write(integerAddWithInteger(100,200)) 이것도 가능합니다. 함수를 호출하고 바로 결과 출력하기
+
+        result=integerAddWithInteger(result,200)
+        document.write(result)
+    </script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello World</title>
+    <script>
+        /*let score = 50
+        // score가 60 이상이면, 합격이라고 콘솔에 출력하고 싶어요
+        if(score>=60){
+            //console.log("합격입니다.")
+            // let을 붙이면 지역변수로 생성합니다. 그래서 블럭 외부에서는 사용 불가능
+            let name = "adam" // 이것을 밑에 else문에서는 사용 불가능하다는 것입니다.
+            pf="합격입니다."
+        }
+        // 밑에 else문은 합격이 아니라면 불합격을 출력해주는 제어문이에요
+        else{
+            //console.log("불합격입니다.")
+            pf="불합격입니다."
+        }
+        // 이 블록 밖에다가 출력하고 싶다면?
+        console.log(pf) //global 데이터를 활용해서 사용하면 다음과 같다. 프로그램은 이걸 더 선호합니다.*/
+
+        /*
+        //80~100 : 우수
+        // 60~79 : 보통
+        // 0~59 : 저조
+        // 그 외 : 잘못된 점수
+
+        //코테 문제를 풀 때에는, 범위를 정확하게 확인해야 한다.
+        let score=99;
+        if(score>=80 && score<=100){
+            pf="우수"
+        }
+        else if(score>=60 && score<=70){
+            pf="보통"
+        }
+        else if(score>=0 && score<=59){
+            pf="저조"
+        }
+        else{ // 전통적인 예외처리, 대부분 잘못된 사항들을 해결하는 곳이다.
+            pf="잘못된 점수"
+        }
+        console.log(pf)*/
+
+        let year = 2023;
+        // year가 윤년인지 판별해서 윤년이면 2023년은 윤년이라고 콘솔에
+        // 출력하고, 아니면 2023년은 윤년이 아니라고 콘솔에 출력하기
+
+        // 윤년 판별 자체는 기억 할 필요 x (단순 문제 조건입니다.)
+        // 윤년은 아래 두 조건 중 하나만 만족하면 됩니다.
+        // 1. 4의 배수이고 100의 배수는 아닌 경우
+        // 2. 400의 배수인 경우
+        /*console.time('code_measure');
+        if((year%4==0 && year %100!=0)||year%400==0){ // 400배수는 400마다 한번씩이고, 1번 조건은 4배수 마다 하지만 100배수일땐 빼서
+                                                      // 그럼 400이라 하면 조건 1은 24*4번 ok 걸리고 조건 2는 1번 걸린다. 
+            console.log(year+"년은 윤년입니다.")
+        }
+        else{
+            console.log(year+"년은 윤년이 아닙니다.")
+        }
+        console.timeEnd('code_measure');*/
+        // 1번 조건문을 먼저 사용했을 때 : 0.06298828125 ms
+        // 2번 조건문을 먼저 사용했을 떄 : 0.083984375 ms
+        // 아마 2번을 먼저 사용한 것이 왜 느리냐면 400 짜리를 한번 돌리고 저 세세한 4배수를 돌리느라 
+        // 4배수&& 100배수 아닌게 true가 나올 확률이 더 높기 때문에 don't care로 빠르게 계산 가능?
+
+        //? 그러면 if와 else if를 사용하면 큰 차이가 날까?
+        /*console.time('code_measure');
+        if(year%4==0 && year %100!=0){
+            console.log(year+"년은 윤년입니다.")
+        }
+        else if(year%400==0){
+            console.log(year+"년은 윤년입니다.")
+        }
+        else{
+            console.log(year+"년은 윤년이 아닙니다.")
+        }
+        console.timeEnd('code_measure');*/
+        // code_measure: 0.077880859375 ms  
+
+        // 알아둘 점 : code_measure는 한번만 해서 얻으면 안된다. 수천만번을 통해서 믿을만한 결과값을 얻어야 하기 때문에
+        // 우리는 이론을 기반으로 작성하는 것이다.
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
