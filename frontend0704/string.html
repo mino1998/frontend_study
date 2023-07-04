@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let company=" minoCNS "
+        //company_up=String.toUpperCase(company) // 이게 안되네?
+        company_up=company.toUpperCase();
+        console.log(company)
+        console.log(company_up)
+        console.log(company.indexOf("pa")) // 없으니 -1
+        //이번엔 모두 대문자로 변경하고 좌우 공백을 제거해야 한다. -> 생각할 것이 좀 있어요 이거
+        company_trim=company.trim(); // trim을 하고 upper를 해야겠네? -> 왜냐 upper할때 공백도 변경할것인가?
+        company_trimUp=company_trim.toUpperCase();
+        //이렇게 해도 된다?
+        company_last=company.trim().toUpperCase();
+        console.log(company_trimUp.indexOf("MIN"))
+        //아래 파일 명에서 확장자를 추출해보자.
+        let filename="mino.hwp"
+        let file=filename.split('.')
+        console.log(file[1])
+        //CGGC의 모든 위치를 출력해보자.
+        //단, 중첩되는 경우에는 앞의 문자열 한 번만 적용
+        let origin="ABKJ CGGC GIFJR CGGC GGCKIECGGCL"
+        let arr=[]
+        console.log(origin)
+        while(1){
+            let idx=-2
+            len=origin.length
+            idx=origin.indexOf("CGGC")
+            if(idx==-1){
+                break;
+            }
+            if(idx!=-2){
+                arr.push(idx)
+                idx+=1
+                if(idx!=len){
+                    origin=origin.slice(idx+3,len)
+                    console.log(origin)
+                }
+            }
+        }
+        arrlen=arr.length
+        for(let index=0 ; index<arrlen; index+=1){
+            if(index>0){
+                arr[index]=arr[index-1]+3+arr[index]+1
+            }
+        }
+        for(i in arr){
+            console.log(i+"번째 인덱스는 "+arr[i]);
+        }
+    </script>
+</body>
+</html>

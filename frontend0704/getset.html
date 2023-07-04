@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let Person =class{
+            //이번에는 생성자 parameter가 2개이다.
+            constructor(name, score){
+                this.name=name;
+                this.score=score;
+            }
+            disp(){
+                console.log(this.name+":"+this.score)
+            }
+            // 은행의 잔액(속성)은 은행원(메서드)를 통해 변경이 가능한 것이다. 
+            // 왜냐하면 근본적으로 데이터는 syncronized가 안된다. 이를 메서드를 통해서 하는 것이다.
+            //getter
+            getName(){
+                return this.name
+            }
+            //setter
+            setName(name){
+                this.name=name
+            }
+            getScore(){
+                return this.score
+            }
+            setScore(score){
+                //유효성 검사 : 올바른 데이터인지 확인하는 것이다.
+                if(score<0 || score>100){
+                    alert("적절하지 않은 점수입니다!")
+                    return // 대입하지 않고 나가버리기
+                }
+                this.score=score
+            }
+        }
+        let obj=new Person("mino",90);
+        obj.setScore(150);
+        obj.disp();
+        
+
+    </script>
+</body>
+</html>

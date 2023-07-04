@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+        //생성자가 없는 경우 동일한 모양의 2개의 객체 생성
+        let ar=[
+            {name:"mino", disp:function(){document.write(this.name)}},
+            {name:"mino2", disp:function(){document.write(this.name)}}
+        ]
+        for(idx in ar){
+            ar[idx].disp()
+            document.write("<br/>")
+        }// 잘 찍히긴 하지만 함수가 중복되어 있는 형태이다. 이를 어떻게 해야 할까?
+        //생성자를 만들어보자. -  왜 생성자야? : 함수 안에서 this를 사용했기 때문이다. 일반함수는 this를 사용할 수 없다. 
+        let person=function(name){
+            this.name=name;
+            this.disp=function(){document.write(this.name)}
+        }
+        // 이렇게 한다면 disp를 두번 하는게 아니다., 메서드는 다시 만들지 않고 속성만 설정해서 인스턴스 생성 
+        ar=[new person("mino"),new person("mino2")]
+        for(idx in ar){
+            ar[idx].disp()
+            document.write("<br/>")
+        }*/
+
+        // class를 생성하고 인스턴스 생성
+        let Member = class{ //관습적으로 클래스는 앞글자 대문자
+            //생성자    
+            constructor(name){
+                    this.name=name
+            }
+            //클래스 안에 메소드를 만들 때에는 let이나 function 생략 가능합니다.
+            disp(){
+                document.write(this.name);
+                document.write("<br/>");
+            }
+        }
+        ar=[new Member("mino"), new Member("mino2")]
+        for(idx in ar){
+            ar[idx].disp()
+        }
+    </script>
+</body>
+</html>

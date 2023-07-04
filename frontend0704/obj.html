@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //let human={name:"이민호",age:26,gender:"male"}
+        //let human2={name:"이민호",age:26,gender:"male"}
+        // 이러면 안된다. 똑같은 모양이 여러개면 "배열"을 만들어야 한다.
+        let human=[{name:"이민호",age:26,gender:"male"},{name:"최종원",age:26,gender:"male"}]
+        let human2={name:"이민호",age:26,gender:"male"}
+        // 위와 같은 형태가 편하지 않을까? 변수가 많으면 메모리에 기억해야 할 것이 많아져서 문제야. 
+        // 모양이 다른걸 그렇게 만들면 다 기억해야 하기에 같은 걸로 묶어야 해
+        // 배열 : 똑같은 애를 묶은 것(순서가 존재), 객체 : 똑같은 애가 아니어도 묶을 수 있는 것 (이름을 잘 정해야 한다.)
+        //document.write(human) // 이렇게 출력시, type을 보여준다. 속성까지 가야지 값을 보여준다.
+        //document.write(human[0].name, human[0].age, human[0].gender) // 이래야 값이 나오겠지?
+        
+        /*
+        //for문을 사용하면 다음과 같아.
+        for(let i=0; i<2; i+=1){
+            document.write(human[i].name, human[i].age, human[i].gender) //중괄호 안을 파고는 것이 . 이다.
+            document.write(human[i]) //왜 출력이 [object Object] 이게 뭘 뜻하는거야? 앞에는 자료형 뒤에는 실제 변수명인데 지을게 없어서 오브젝트라 한거야. 
+            document.write("<br/>") // 근데 속성은 3개인데 왜 1개만 나와? => 
+        }
+        for(index in human){
+            document.write(human[index].name, human[index].age, human[index].gender) //중괄호 안을 파고는 것이 . 이다.
+            document.write(human[index]) //왜 출력이 [object Object] 이게 뭘 뜻하는거야? 
+            document.write("<br/>")
+        } // 파이썬처럼 ~in~ 가능하구나?*/
+
+        let obj={name:"mino",disp:function(){
+							alert(this.name)
+                            }
+                }
+        obj.disp()
+    </script>
+</body>
+</html>

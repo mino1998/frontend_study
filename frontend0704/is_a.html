@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let Super =class{ //class Super{}이것도 가능하긴 함
+            method(){
+                console.log("상위 클래스의 메서드에요")
+            }
+        }
+        class Sub extends Super{
+            //여긴 method()가 없죠?
+            method(){
+                super.method();
+                console.log("상위 클래스의 메서드 재정의")
+            }
+        }
+        let obj = new Sub();
+        obj.method() //하지만 나오죠?
+        //Sub에는 method가 없지만, 상속을 받아서 호출이 가능함
+        let Sub2= class extends Super{
+        }
+        let obj2=new Sub2();
+        obj2.method()
+    </script>
+</body>
+</html>

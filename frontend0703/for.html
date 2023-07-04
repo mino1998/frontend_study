@@ -46,9 +46,8 @@
         // }
         const cnt = 7;
         const numarray = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-        let colnum = 13;
+        let colnum = cnt*2-1;
         let arr_idx = 0;
-
         function writeCharacters(character, count) {
             document.write(character.repeat(count));
         }
@@ -56,38 +55,30 @@
         function getNextNumberIndex(currentIndex) {
             return (currentIndex + 1) % numarray.length;
         }
-
         for (let row = 1; row <= cnt; row++) {
-            // if (arr_idx>numarray.length) {
-            //     arr_idx = 0;
-            // }
             if (row === cnt) {
                 while (colnum > 0) {
                     document.write(numarray[arr_idx]);
                     arr_idx = getNextNumberIndex(arr_idx);
                     colnum--;
                 }
+                continue;
             } 
             else {
-                const num = (row !== 1 && row !== cnt) ? 2 : 1;
+                const num = (row !== 1) ? 2 : 1;
                 const star = cnt - row;
                 const star2 = colnum - (star * 2) - num;
                 const star3 = cnt - row;
-
                 writeCharacters('_', star);
                 document.write(numarray[arr_idx]);
                 arr_idx = getNextNumberIndex(arr_idx);
-
                 writeCharacters('_', star2);
-
                 if (num === 2) {
                     document.write(numarray[arr_idx]);
                     arr_idx = getNextNumberIndex(arr_idx);
                 }
-
                 writeCharacters('_', star3);
             }
-
             document.write("<br/>");
         }
     </script>
